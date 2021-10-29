@@ -11,6 +11,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thomascupchurch/react-portfolio.git"
@@ -20,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/thomascupchurch/react-portfolio/issues"
   },
-  "homepage": "https://github.com/thomascupchurch/react-portfolio#readme"
+  "homepage": "https://github.com/thomascupchurch/react-portfolio#readme",
+  "dependencies": {
+    "react": "^17.0.2"
+  }
 }
