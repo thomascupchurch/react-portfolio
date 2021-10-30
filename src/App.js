@@ -1,45 +1,41 @@
 import React, { useState } from "react";
-import Nav from "./components/Nav";
-import About from "./components/About";
-import Gallery from "./components/Gallery";
-import ContactForm from "./components/Contact";
+import Navigation from "./components/Navigation";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Project from "./components/Project";
+import ContactForm from "./components/Contact";
+import About from "./components/About";
 
 function App() {
   const [contactSelected, setContactSelected] = useState(false);
-  const [categories] = useState([
-    {
-      name: "commercial",
-      description:
-        "Photos of grocery stores, food trucks, and other commercial projects",
-    },
-    { name: "portraits", description: "Portraits of people in my life" },
-    { name: "food", description: "Delicious delicacies" },
-    {
-      name: "landscape",
-      description: "Fields, farmhouses, waterfalls, and the beauty of nature",
-    },
+  const [directories] = useState([
+    { name: "test", description: "test" },
+    { name: "My Work", description: "some of my apps and such" },
   ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
+  const [currentDirectory, setCurrentDirectory] = useState(directories[0]);
   return (
     <div>
-      <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-      ></Nav>
+      <h1>IT WORKS!!!</h1>
+      <Navigation
+        directories={directories}
+        setCurrentDirectory={setCurrentDirectory}
+        currentDirectory={currentDirectory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
+      ></Navigation>
+      <Header />
       <main>
         {!contactSelected ? (
           <>
-            <Gallery currentCategory={currentCategory}></Gallery>
+            <Project currentDirectory={currentDirectory}></Project>
             <About></About>
           </>
         ) : (
           <ContactForm></ContactForm>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
