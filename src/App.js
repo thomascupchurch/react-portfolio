@@ -16,7 +16,6 @@ function App() {
   const [currentDirectory, setCurrentDirectory] = useState(directories[0]);
   return (
     <div>
-      <h1>IT WORKS!!!</h1>
       <Navigation
         directories={directories}
         setCurrentDirectory={setCurrentDirectory}
