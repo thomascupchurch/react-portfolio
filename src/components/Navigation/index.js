@@ -1,5 +1,6 @@
 import React from "react";
 import { capitalizeFirstLetter } from "../../utils/helpers";
+// import { portfolioSelected, setPortfolioSelected } from "../Portfolio";
 
 function Navigation(props) {
   const {
@@ -8,6 +9,8 @@ function Navigation(props) {
     currentDirectory,
     contactSelected,
     setContactSelected,
+    portfolioSelected,
+    setPortfolioSelected,
   } = props;
 
   const handleClick = (item) => {
@@ -19,11 +22,11 @@ function Navigation(props) {
     <header className="flex-row px-1">
       <h2>
         <a href="/">
-          <span role="img" aria-label="camera">
+          <span role="img" aria-label="cheeseburger">
             {" "}
-            📸
+            🍔
           </span>{" "}
-          Oh Snap!
+          CodeBurger!
         </a>
       </h2>
       <nav>
@@ -43,6 +46,16 @@ function Navigation(props) {
               Contact
             </span>
           </li>
+          {/* <li className={`mx-2 ${portfolioSelected && "navActive"}`}>
+            <span
+              onClick={() => {
+                handleClick("Portfolio");
+                setPortfolioSelected(true);
+              }}
+            >
+              Portfolio
+            </span>
+          </li> */}
           {directories.map((directory) => (
             <li
               className={`mx-1 ${

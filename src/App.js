@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Project from "./components/Project";
+import Portfolio from "./components/Portfolio";
 import ContactForm from "./components/Contact";
 import About from "./components/About";
 
 function App() {
   const [contactSelected, setContactSelected] = useState(false);
+  const [portfolioSelected, setPortfolioSelected] = useState(false);
   const [directories] = useState([
-    { name: "test", description: "test" },
-    { name: "My Work", description: "some of my apps and such" },
+    { name: "Portfolio", description: "some of my apps and such" },
   ]);
 
   const [currentDirectory, setCurrentDirectory] = useState(directories[0]);
@@ -22,12 +22,14 @@ function App() {
         currentDirectory={currentDirectory}
         contactSelected={contactSelected}
         setContactSelected={setContactSelected}
+        portfolioSelected={portfolioSelected}
+        setPortfolioSelected={setPortfolioSelected}
       ></Navigation>
       <Header />
       <main>
-        {!contactSelected ? (
+        {!contactSelected && !portfolioSelected ? (
           <>
-            <Project currentDirectory={currentDirectory}></Project>
+            <Portfolio currentDirectory={currentDirectory}></Portfolio>
             <About></About>
           </>
         ) : (

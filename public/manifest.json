@@ -6,6 +6,11 @@
         "src": "cover-img.png",
         "sizes": "798x800",
         "type": "image/x-icon"
+      },
+      {
+        "src": "LOTR.png",
+        "sizes": "2588x2138",
+        "type": "image/x-icon"
       }
     ],
     "start_url": ".",
